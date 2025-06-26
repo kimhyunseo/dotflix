@@ -1,0 +1,113 @@
+.slick-track{
+    padding: 0 1rem;
+}
+
+.movie-card{
+    // aspect-ratio: 2/3;
+    position: relative;
+    margin: 0 0.5rem;
+    transition: 0.3s;
+    padding: 1rem;
+    cursor: pointer;
+    &:hover{
+        transform: scale(1.05);
+    }
+    img{
+        width: 200px;
+        border-radius: 0.5rem;
+        aspect-ratio: 2/2.9;
+    }
+    p{
+        font-size: 100px;
+        font-weight: 800;
+        position: absolute;
+        bottom: 0px;
+        left: -1rem;
+        color: $bg-color;
+        -webkit-text-stroke: 1px $text-color;
+        text-shadow: 0px 0px 20px rgba(0,0,0,0.8);
+    }
+}
+.movie-list{
+    position: relative;
+    margin: 3rem 0;
+    h2{
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    .btn-prev,.btn-next{
+        background-color: #1A1A1A;
+        width: 24px;
+        height: 120px;
+        font-size: 1rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        line-height: 120px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        &:hover{
+            background-color: #333;
+        }
+        z-index: 15;
+    }
+    .btn-prev{
+        left: -50px;
+        @include tablet{
+            left: -10px;
+        }
+    }
+    .btn-next{
+        right: -50px;
+        @include tablet{
+            right: -10px;
+        }
+    }
+}
+
+.movie-popup{
+    z-index: 10;
+    width: 50%;
+    height: 50vh;
+    border-radius: 1rem;
+    background-color: rgba(0,0,0,0.8);
+    color: $text-color;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3rem;
+    @include flex-layout(column,flex-end,flex-start);
+    gap: 1rem;
+    img{
+        width: 90%;
+        position: absolute;
+        top: 10px;
+        left: 5%;
+        z-index: -1;
+    }
+    h3{
+        font-size: 1.5rem;
+    }
+    button{
+        background-color: transparent;
+        outline: none;
+        border: none;
+        color: #fff;
+        font-size: 3rem;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        cursor: pointer;
+    }
+}
+.movie-popup .dark{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(180deg,rgba(0, 0, 0, 0) 44%, rgba(0, 0, 0, 1) 100%);
+}

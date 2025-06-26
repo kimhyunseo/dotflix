@@ -1,0 +1,43 @@
+.main-wrap {
+  height: 100vh;
+  // background-image: url(../assets/bg-image.jpg);
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.9)
+    ),
+    url(../assets/bg-image.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+header {
+  height: 100px;
+  max-width: $large-size;
+  margin: 0 auto;
+  @include flex-layout(row,space-between)
+}
+
+.logo-img {
+  width: 200px;
+}
+
+.lang {
+  @include flex-layout();
+  gap: 1rem;
+  select {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: $text-color;
+    outline: none;
+    option{
+      background-color: $text-color;
+      color: $bg-color;
+    }
+  }
+  button {
+    @include btn-style();
+    font-size: 14px;
+  }
+}

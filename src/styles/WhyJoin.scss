@@ -1,0 +1,48 @@
+.why-join {
+  margin: 3rem 0;
+  h2 {
+    font-size: $font-title;
+  }
+  ul {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    @include mobile {
+      flex-direction: column;
+    }
+    li {
+      position: relative;
+      flex: 1;
+      aspect-ratio: 1/1.3;
+      @include tablet {
+        width: 50%;
+        aspect-ratio: 1/0.5;
+      }
+      @include mobile {
+        width: 100%;
+        aspect-ratio: 1/0.5;
+      }
+      background-image: linear-gradient(135deg, #191f42, #1e152b, #201018);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      * {
+        margin: 0.5rem 0;
+      }
+      h3 {
+        font-size: $font-medium;
+        margin-bottom: 20px;
+        line-height: 1.5;
+      }
+      p {
+        font-size: $font-small;
+        color: rgba(255, 255, 255, 0.7);
+      }
+      div {
+        position: absolute;
+        bottom: 0;
+        right: 10px;
+      }
+    }
+  }
+}
